@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Colour text selection */
+*::selection {
+    visibility: hidden;
+}
+
+header:hover {
+    cursor: default;
+}
+
+html {
+    background-color: rgb(50, 50, 50);
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(230, 230, 230);
+}
+
+body {
+    line-height: 1.2rem;
+}
+
+main {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    line-height: 1.5rem;
+}
+
+/* Style for footer */
+footer {
+    text-align: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    color: rgb(150, 150, 150);
+    padding-top: 3rem;
+    padding-bottom: 1.25rem;
+}
+
+/* Style for navigation lists in the footer and nav */
+footer > ul > li:nth-child(even){
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+footer ul li{
+    display: inline;
+    margin: 0;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+/* Style for hyperlinked text */
+a {
+    text-decoration: none;
+    color: rgb(195, 195, 250);
+}
+
+a:hover {
+    color: rgb(230, 230, 250);
+    cursor: pointer;
+}
+

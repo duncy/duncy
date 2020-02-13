@@ -1,0 +1,184 @@
+header {
+    grid-area: header;
+    background: rgb(150, 65, 65);
+    height: 100vh;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 4.5rem;
+}
+
+header > h1 {
+    margin-top: calc(50vh - 7rem);
+    text-shadow: 0.5rem 0.25rem black;
+    color: rgb(220, 220, 100);
+}
+
+header > h2 {
+    font-size: 2rem;
+    text-shadow: 0.150rem 0.0750rem black;
+    line-height: 1rem;
+}
+
+
+.line {
+    height: 0.5rem;
+    width: 20rem;
+    display: inline-block;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0.25rem 0.25rem black;
+}
+
+main {
+    grid-area: main;
+    background: rgb(70, 65, 75);
+    min-height: 100vh;
+    height: fit-content;
+}
+
+main > h1 {
+    margin-left: calc(5vw + 1rem);
+    margin-top: 2rem;
+}
+
+footer {
+    grid-area: footer;
+}
+
+#body-grid-container {
+    display: grid;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1rem 1rem;
+    margin-left: calc(5vw + 1rem);
+    margin-right: calc(5vw + 1rem);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.grid-item {
+    min-height: 10rem;
+    height: fit-content;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0.25rem 0.25rem black;
+    color: black;
+    background-color: rgb(240, 240, 240);
+}
+
+
+/* Style for section hyperlinked text */
+.grid-item a {
+    text-decoration: none;
+    color: rgb(215, 90, 40);
+}
+
+.grid-item a:hover {
+    color: rgb(250, 180, 150);
+    cursor: pointer;
+}
+
+.grid-item a::selection {
+    color: rgb(200, 220, 255);
+}
+.grid-item > h1 {
+    line-height: 3rem;
+    font-size: 2rem;
+}
+
+.grid-item > p {
+    line-height: 1.3rem;
+    font-size: 1.1rem;
+}
+
+.grid-item > a {
+    background-color: white;
+    color: black;
+    display: block;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid black;
+    box-shadow: 0.150rem 0.0750rem black;
+    width: fit-content;
+    float: right;
+}
+
+.grid-item > a:hover {
+    color: rgb(50, 50, 50);
+    text-decoration: underline;
+}
+
+.grid-item *::selection {
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+
+
+
+.code-bar {
+    font-weight: 500;
+    box-shadow: 0.25rem 0.25rem black;
+    margin: auto;
+    margin-top: 2rem;
+    display: block;
+    height: 2rem;
+    width: 90vw;
+}
+
+.code-bar-item{
+    font-size: 1.25rem;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    line-height: 2rem;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: 0.2s ease-out;
+}
+
+.code-bar-item:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+
+#python {
+    width: 22.5%;
+    background-color: rgb(85, 85, 150);
+}
+
+#javascript {
+    width: 12.5%;
+    background-color: rgb(75, 150, 115);
+}
+
+#r {
+    width: 10%;
+    background-color: rgb(85, 100, 160);
+}
+
+#sql {
+    width: 15%;
+    background-color: rgb(120, 80, 120); 
+}
+
+#rust {
+    width: 15%;
+    background-color: rgb(120, 80, 80);
+}
+
+#c {
+    width: 10%;
+    background-color: rgb(115, 145, 170);
+}
+
+#php {
+    width: 15%;
+    background-color: rgb(75, 75, 125);
+}
+
