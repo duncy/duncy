@@ -10,44 +10,49 @@
         <title>Duncan Fryer</title>
     </head>
     <body>
-        <div id="body-grid-container">
-            <header>
+        
+        <header>
+            <transition name="fade" appear>
+            <div>
                 <h1>Duncan<br>Fryer</h1>
                 <div class=line></div>
                 <h2>[ Дункан Фрайер ]</h2>
-            </header>
-            <main>
-                <div class="code-bar"><div class="code-bar-item" id="python">Python 3</div><div class="code-bar-item" id="javascript">JS (Vue/Vuex)</div><div class="code-bar-item" id="r">R</div><div class="code-bar-item" id="sql">SQL</div><div class="code-bar-item" id="rust">Rust</div><div class="code-bar-item" id="c">C</div><div class="code-bar-item" id="php">PHP</div></div>
-                <h1>Projects</h1>
-                <nav class="grid-container">
-                    <div class="grid-item" id="tutor">
-                        <h1>Tutor</h1><p>A work in progress collection of information for me to use as notes for myself and my friends, expanded to be a public resource.</p>
-                        <p>Website is WIP.</p>
-                        <a href="https://tutor.duncy.nz/">Check it out</a>
-                    </div>
-                    <div class="grid-item" id="flightless">
-                        <h1>Flightless</h1><p>A pretty bog-standard Discord bot made for my server, work in progress and written in Python.</p>
-                        <p>Website is WIP.</p>
-                        <a href="https://flightless.duncy.nz/">Check it out</a>
-                    </div>
-                    <div class="grid-item" id="pukeko">
-                        <h1>PukekoHost</h1><p>A game server hosting service designed around Discord with a pricing model that scales with playtime rather than prepaid allotments of time.</p><p>Collaboratively developed with <a href="https://yiays.com/">Yiays</a>.</p>
-                        <p>Official website is coming soon. Current is WIP.</p>
-                        <a href="https://pukeko.yiays.com/">Check it out</a>
-                    </div>
-                    <div class="grid-item" id="untitled-game">
-                        <h1>Untitled Game Project</h1><p>Coming soon.</p>
-                    </div>
-                </nav>
-            </main>
-            <footer>
-                <p>Duncan Fryer<br>© 2019 - 2020</p>
-                <ul>
-                    <li><a href="https://github.com/alt1f923">GitHub</a></li>
-                    <li><a href="https://twitter.com/le_epic_weasel">Twitter</a></li>
-                    <li><a href="https://discordapp.com">Дункан#5963</a></li>
-                </ul>
-            </footer>
-        </div>
+            </div>
+            </transition>
+        </header>
+        
+        <main>
+            <div class="code-bar"><div class="code-bar-item" id="python">Python 3</div><div class="code-bar-item" id="javascript">JS (Vue/Vuex)</div><div class="code-bar-item" id="r">R</div><div class="code-bar-item" id="sql">SQL</div><div class="code-bar-item" id="rust">Rust</div><div class="code-bar-item" id="c">C</div><div class="code-bar-item" id="php">PHP</div></div>
+            <h1>Projects</h1>
+            <nav class="grid-container">
+                <div class="grid-item" id="tutor">
+                    <h1>Tutor</h1><p>A work in progress collection of information for me to use as notes for myself and my friends, expanded to be a public resource.</p>
+                    <p>Website is WIP.</p>
+                    <a href="https://tutor.duncy.nz/">Check it out</a>
+                </div>
+                <div class="grid-item" id="flightless">
+                    <h1>Flightless</h1><p>A pretty bog-standard Discord bot made for my server, work in progress and written in Python.</p>
+                    <p>Website is WIP.</p>
+                    <a href="https://flightless.duncy.nz/">Check it out</a>
+                </div>
+                <div class="grid-item" id="pukeko">
+                    <h1>PukekoHost</h1><p>A game server hosting service designed around Discord with a pricing model that scales with playtime rather than prepaid allotments of time.</p><p>Collaboratively developed with <a href="https://yiays.com/">Yiays</a>.</p>
+                    <p>Official website is coming soon. Current is not final.</p>
+                    <a href="https://pukeko.yiays.com/">Check it out</a>
+                </div>
+                <div class="grid-item" id="untitled-game">
+                    <h1>Untitled Game Project</h1><p>Coming soon.</p>
+                </div>
+            </nav>
+        </main>
+        <footer>
+            <p>Duncan Fryer<br>© 2019 - 2020</p>
+            <ul>
+                <li><a href="https://github.com/alt1f923">GitHub</a></li>
+                <li><a href="https://discordapp.com">Дункан#5963</a></li>
+            </ul>
+        </footer>
+        <script src="scripts/vue.min.js"></script>
+        <script src="scripts/main.js"></script>
     </body>
 </html>

@@ -1,3 +1,11 @@
+body {
+    display: grid;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
 header {
     grid-area: header;
     background: rgb(150, 65, 65);
@@ -7,18 +15,18 @@ header {
     line-height: 4.5rem;
 }
 
-header > h1 {
+
+header h1 {
     margin-top: calc(50vh - 7rem);
     text-shadow: 0.5rem 0.25rem black;
     color: rgb(220, 220, 100);
 }
 
-header > h2 {
+header h2 {
     font-size: 2rem;
     text-shadow: 0.150rem 0.0750rem black;
     line-height: 1rem;
 }
-
 
 .line {
     height: 0.5rem;
@@ -44,14 +52,6 @@ footer {
     grid-area: footer;
 }
 
-#body-grid-container {
-    display: grid;
-    grid-template-areas:
-    'header'
-    'main'
-    'footer';
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: auto;
@@ -63,7 +63,8 @@ footer {
 }
 
 .grid-item {
-    min-height: 10rem;
+    position: relative;
+    min-height: 15rem;
     height: fit-content;
     padding: 2rem;
     text-align: center;
@@ -98,15 +99,15 @@ footer {
 }
 
 .grid-item > a {
+    margin: auto;
+    margin-top: 2rem;
     background-color: white;
     color: black;
     display: block;
     padding: 1rem;
-    margin-top: 1rem;
     border: 1px solid black;
     box-shadow: 0.150rem 0.0750rem black;
     width: fit-content;
-    float: right;
 }
 
 .grid-item > a:hover {
@@ -118,8 +119,6 @@ footer {
     background-color: rgb(50, 50, 50);
     color: white;
 }
-
-
 
 .code-bar {
     font-weight: 500;
@@ -142,10 +141,10 @@ footer {
     transition: 0.2s ease-out;
 }
 
-.code-bar-item:hover {
+/* .code-bar-item:hover {
     cursor: pointer;
     filter: brightness(1.1);
-}
+} */
 
 #python {
     width: 22.5%;
@@ -182,3 +181,33 @@ footer {
     background-color: rgb(75, 75, 125);
 }
 
+@media screen and (min-width: 1100px){
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+
+    .grid-item > a {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        margin: 0;
+    }
+}
+
+/* header fade in on load transition */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s ease-out, transform 0.5s ease;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(-1rem);
+}
+
+.fade-enter-active {
+    transition-delay: 0.5s;
+}
+
+.fade-leave, .fade-enter-to {
+    opacity: 1;
+}
