@@ -3,7 +3,13 @@
 * {
     margin: 0;
     padding: 0;
+    scrollbar-width: 0;
 }
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
 
 /* Colour text selection */
 *::selection {
