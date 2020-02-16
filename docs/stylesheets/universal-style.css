@@ -52,14 +52,10 @@ footer {
 }
 
 /* Style for navigation lists in the footer and nav */
-footer > ul > li:nth-child(even){
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
 footer ul li{
     display: inline;
     margin: 0;
+    padding: 1rem;
 }
 
 footer li {
