@@ -52,70 +52,65 @@ footer {
     grid-area: footer;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 1rem 1rem;
+nav {
     margin-left: calc(5vw + 1rem);
     margin-right: calc(5vw + 1rem);
     margin-top: 2rem;
     margin-bottom: 2rem;
+    box-shadow: 0.25rem 0.25rem black;
 }
 
-.grid-item {
+nav > div {
     position: relative;
-    min-height: 15rem;
     height: fit-content;
     padding: 2rem;
-    text-align: center;
-    box-shadow: 0.25rem 0.25rem black;
     color: black;
     background-color: rgb(240, 240, 240);
 }
 
+nav > div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 
 /* Style for section hyperlinked text */
-.grid-item a {
+nav > div a {
     text-decoration: none;
     color: rgb(215, 90, 40);
 }
 
-.grid-item a:hover {
+nav > div a:hover {
     color: rgb(250, 180, 150);
     cursor: pointer;
 }
 
-.grid-item a::selection {
+nav > div a::selection {
     color: rgb(200, 220, 255);
 }
-.grid-item > h1 {
-    line-height: 3rem;
-    font-size: 2rem;
+nav > div > h1 {
+    line-height: 2rem;
+    font-size: 1.2rem;
 }
 
-.grid-item > p {
-    line-height: 1.3rem;
-    font-size: 1.1rem;
+nav > div > p {
+    line-height: 1.2rem;
 }
 
-.grid-item > a {
-    margin: auto;
-    margin-top: 2rem;
-    background-color: white;
-    color: black;
-    display: block;
-    padding: 1rem;
-    border: 1px solid black;
-    box-shadow: 0.150rem 0.0750rem black;
-    width: fit-content;
+nav > div > a {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    display: inline;
 }
 
-.grid-item > a:hover {
-    color: rgb(50, 50, 50);
-    text-decoration: underline;
+.languages {
+    color: rgba(0,0,0, 0.8);
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
 }
 
-.grid-item *::selection {
+nav > div *::selection {
     background-color: rgb(50, 50, 50);
     color: white;
 }
@@ -181,18 +176,23 @@ footer {
     background-color: rgb(75, 75, 125);
 }
 
-@media screen and (min-width: 1100px){
-    .grid-container {
-        grid-template-columns: auto auto;
-    }
-
-    .grid-item > a {
-        position: absolute;
-        bottom: 2rem;
-        right: 2rem;
-        margin: 0;
-    }
+#tutor {
+    border-left: 0.5rem solid #506491;
 }
+
+#flightless {
+    border-left: 0.5rem solid rgb(126, 96, 73);
+}
+
+#pukeko {
+    border-left: 0.5rem solid rgb(46, 80, 136);
+}
+
+#asm-fizzbuzz {
+    border-left: 0.5rem solid #000;
+}
+
+
 
 /* header fade in on load transition */
 .fade-enter-active, .fade-leave-active {
