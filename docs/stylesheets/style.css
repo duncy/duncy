@@ -1,139 +1,160 @@
-body {
-    display: grid;
-    grid-template-areas:
-    'header'
-    'main'
-    'footer';
+
+#app {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  position: relative;
 }
 
 header {
-    grid-area: header;
-    background: rgb(150, 65, 65);
-    height: 100vh;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 4.5rem;
+  grid-area: header;
+  background: rgb(150, 65, 65);
+  height: 100vh;
+  font-size: 3rem;
+  text-align: center;
+  line-height: 4.5rem;
 }
 
-
 header h1 {
-    margin-top: calc(50vh - 7rem);
-    text-shadow: 0.5rem 0.25rem black;
-    color: rgb(220, 220, 100);
+  margin-top: calc(50vh - 7rem);
+  text-shadow: 0.5rem 0.25rem black;
+  color: rgb(220, 220, 100);
 }
 
 header h2 {
-    font-size: 2rem;
-    text-shadow: 0.150rem 0.0750rem black;
-    line-height: 1rem;
+  font-size: 2rem;
+  text-shadow: 0.15rem 0.075rem black;
+  line-height: 1rem;
 }
 
 .line {
-    height: 0.5rem;
-    width: 20rem;
-    display: inline-block;
-    background-color: rgb(230, 230, 230);
-    box-shadow: 0.25rem 0.25rem black;
+  height: 0.5rem;
+  width: 20rem;
+  display: inline-block;
+  background-color: rgb(230, 230, 230);
+  box-shadow: 0.25rem 0.25rem black;
 }
 
 main {
-    grid-area: main;
-    background: rgb(70, 65, 75);
-    min-height: 100vh;
-    height: fit-content;
+  grid-area: main;
+  min-height: 100vh;
+  height: fit-content;
+  background: rgb(70, 65, 75);
 }
 
 main > h1 {
-    margin-left: calc(5vw + 1rem);
-    margin-top: 2rem;
+  margin-left: calc(5vw + 1rem);
+  margin-top: 2rem;
+  word-spacing: 3rem;
+  text-shadow: 0.1rem 0.1rem black;
 }
 
-footer {
-    grid-area: footer;
-}
-
-nav {
-    margin-left: calc(5vw + 1rem);
-    margin-right: calc(5vw + 1rem);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0.25rem 0.25rem black;
-}
-
-nav > div {
-    position: relative;
-    height: fit-content;
-    padding: 2rem;
-    color: black;
-    background-color: rgb(240, 240, 240);
-}
-
-nav > div {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-
-/* Style for section hyperlinked text */
-nav > div a {
-    text-decoration: none;
-    color: rgb(215, 90, 40);
-}
-
-nav > div a:hover {
-    color: rgb(250, 180, 150);
+main > h1 > span:not(.active):hover {
     cursor: pointer;
 }
 
-nav > div a::selection {
-    color: rgb(200, 220, 255);
-}
-nav > div > h1 {
-    line-height: 2rem;
-    font-size: 1.2rem;
+main > h1 > span.active,  main > h1 > span:hover{
+    text-decoration: underline;
 }
 
-nav > div > p {
-    line-height: 1.2rem;
+footer {
+  height: 4rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-nav > div > a {
-    position: absolute;
-    right: 1rem;
-    bottom: 0.5rem;
-    display: inline;
+nav {
+  margin-left: calc(5vw + 1rem);
+  margin-right: calc(5vw + 1rem);
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+  box-shadow: 0.25rem 0.25rem black;
+  background-color: rgb(240, 240, 240);
+  color: black;
+  white-space: pre-line;
+  max-height: 72vh;
+  overflow-y: scroll;
 }
 
-.languages {
-    color: rgba(0,0,0, 0.8);
-    position: absolute;
-    right: 1rem;
-    top: 0.5rem;
+nav > div {
+  padding: 2rem;
 }
 
-nav > div *::selection {
-    background-color: rgb(50, 50, 50);
-    color: white;
+nav > ul > li > div {
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+nav div{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: fit-content;
+}
+
+/* Style for section hyperlinked text */
+nav a {
+  text-decoration: none;
+  color: rgb(215, 90, 40);
+}
+
+nav a:hover {
+  color: rgb(250, 180, 150);
+  cursor: pointer;
+}
+
+nav a::selection {
+  color: rgb(200, 220, 255);
+}
+nav h1 {
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+nav > p {
+  line-height: 1.2rem;
+}
+
+nav div > a {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+  display: inline;
+}
+
+.languages, .time-since {
+  color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+}
+
+nav div *::selection {
+  background-color: rgb(50, 50, 50);
+  color: white;
 }
 
 .code-bar {
-    font-weight: 500;
-    box-shadow: 0.25rem 0.25rem black;
-    margin: auto;
-    margin-top: 2rem;
-    display: block;
-    height: 2rem;
-    width: 90vw;
+  font-weight: 500;
+  box-shadow: 0.25rem 0.25rem black;
+  margin: auto;
+  margin-top: 2rem;
+  display: block;
+  height: 2rem;
+  width: 90vw;
 }
 
-.code-bar-item{
-    font-size: 1.25rem;
-    display: inline-block;
-    height: 100%;
-    text-align: center;
-    line-height: 2rem;
-    vertical-align: middle;
-    overflow: hidden;
-    transition: 0.2s ease-out;
+.code-bar-item {
+  font-size: 1.25rem;
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: 0.2s ease-out;
 }
 
 /* .code-bar-item:hover {
@@ -142,72 +163,96 @@ nav > div *::selection {
 } */
 
 #python {
-    width: 22.5%;
-    background-color: rgb(85, 85, 150);
+  width: 22.5%;
+  background-color: rgb(85, 85, 150);
 }
 
 #javascript {
-    width: 12.5%;
-    background-color: rgb(75, 150, 115);
+  width: 12.5%;
+  background-color: rgb(75, 150, 115);
 }
 
 #r {
-    width: 10%;
-    background-color: rgb(85, 100, 160);
+  width: 10%;
+  background-color: rgb(85, 100, 160);
 }
 
 #sql {
-    width: 15%;
-    background-color: rgb(120, 80, 120); 
+  width: 15%;
+  background-color: rgb(120, 80, 120);
 }
 
 #rust {
-    width: 15%;
-    background-color: rgb(120, 80, 80);
+  width: 15%;
+  background-color: rgb(120, 80, 80);
 }
 
 #c {
-    width: 10%;
-    background-color: rgb(115, 145, 170);
+  width: 10%;
+  background-color: rgb(115, 145, 170);
 }
 
 #php {
-    width: 15%;
-    background-color: rgb(75, 75, 125);
+  width: 15%;
+  background-color: rgb(75, 75, 125);
 }
 
 #tutor {
-    border-left: 0.5rem solid #506491;
+  border-left: 0.5rem solid #506491;
 }
 
 #flightless {
-    border-left: 0.5rem solid rgb(126, 96, 73);
+  border-left: 0.5rem solid rgb(126, 96, 73);
 }
 
 #pukeko {
-    border-left: 0.5rem solid rgb(46, 80, 136);
+  border-left: 0.5rem solid rgb(46, 80, 136);
 }
 
 #asm-fizzbuzz {
-    border-left: 0.5rem solid #000;
+  border-left: 0.5rem solid #000;
 }
-
-
 
 /* header fade in on load transition */
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 0.5s ease-out, transform 0.5s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out, transform 0.5s ease;
 }
 
-.fade-enter, .fade-leave-to {
-    opacity: 0;
-    transform: translateY(-1rem);
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-1rem);
 }
 
 .fade-enter-active {
-    transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 
-.fade-leave, .fade-enter-to {
-    opacity: 1;
+.fade-leave,
+.fade-enter-to {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1100px){ 
+  * {
+    scrollbar-width: 0.5rem;
+  }
+  
+  ::-webkit-scrollbar {
+    display: initial;
+    width: 0.5rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 }

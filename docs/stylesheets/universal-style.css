@@ -33,10 +33,6 @@ body {
     line-height: 1.2rem;
 }
 
-main {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-}
-
 ul {
     line-height: 1.5rem;
 }
@@ -47,7 +43,6 @@ footer {
     font-size: 1rem;
     flex-shrink: 0;
     color: rgb(150, 150, 150);
-    padding-top: 3rem;
     padding-bottom: 1.25rem;
 }
 
