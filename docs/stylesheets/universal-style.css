@@ -27,6 +27,7 @@ html {
     background-color: rgb(50, 50, 50);
     font-family: 'Source Sans Pro', sans-serif;
     color: rgb(230, 230, 230);
+    scroll-behavior: smooth;
 }
 
 body {
