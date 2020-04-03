@@ -23,7 +23,7 @@ function millisecondsToTimeString(msecs) {
     }else if (secs === 1) {
         return "1 second ago"
     }else if (secs < 60) {
-        return secs + "seconds ago"
+        return secs + " seconds ago"
     }
 }
 
@@ -85,7 +85,7 @@ var main = new Vue({
                             'date': time,
                             'name': event.repo.name, 
                             "url": "https://github.com/" + event.repo.name,
-                            "title": "Pushed " + event.payload.size + " commit(s) to /" + branch,
+                            "title": "Pushed " + event.payload.size + " commit(s) to " + branch,
                             "comments": commits
                         })
                     }else if (event.type === "PullRequestEvent") {
