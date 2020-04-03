@@ -47,7 +47,7 @@ Vue.component('header-text', {
 })
 
 Vue.component('subheader-text', {
-    template: '<transition name="fade2" appear><div><h3>I\'m a university trained and hobbyist programmer with experience and interests in <span class="important">software development</span>, <span class="important">database systems</span> and <span class="important">web development</span>.</h3></div></transition>'
+    template: '<transition name="fade2" appear><div><h3>University trained and hobbyist programmer with experience and interests in <span class="important">software development</span>, <span class="important">database systems</span> and <span class="important">web development</span>.</h3></div></transition>'
 })
 
 Vue.component('activity', {

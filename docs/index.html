@@ -12,6 +12,10 @@
     <body>
         <div id="app">
             <header>
+                <nav class="history-nav">
+                    <span @click="updateID(0);scroll(0, window.innerHeight)" :class="{ active: isProjects }">Projects</span>
+                    <span @click="updateID(1);scroll(0, window.innerHeight)" :class="{ active: isActivity }">Activity</span>
+                </nav>
                 <noscript>
                     <div>
                         <h1>Duncan<br>Fryer</h1>
@@ -19,7 +23,7 @@
                         <h2>[ Дункан Фрайер ]</h2>
                     </div>
                     <div>
-                        <h3>I'm a university trained and hobbyist programmer with experience and interests in <span class="important">software development</span>, <span class="important">database systems</span> and <span class="important">web development</span>.</h3>
+                        <h3>University trained and hobbyist programmer with experience and interests in <span class="important">software development</span>, <span class="important">database systems</span> and <span class="important">web development</span>.</h3>
                     </div>
                 </noscript>
                 <header-text></header-text>
@@ -28,11 +32,11 @@
             
             <main>
                 <div class="code-bar"><div class="code-bar-item" id="python">Python 3</div><div class="code-bar-item" id="javascript">JS (Vue/Vuex)</div><div class="code-bar-item" id="r">R</div><div class="code-bar-item" id="sql">SQL</div><div class="code-bar-item" id="rust">Rust</div><div class="code-bar-item" id="c">C</div><div class="code-bar-item" id="php">PHP</div></div>
-                <h1>
+                <nav class="history-nav">
                     <span @click="updateID(0)" :class="{ active: isProjects }">Projects</span>
                     <span @click="updateID(1)" :class="{ active: isActivity }">Activity</span>
-                </h1>
-                <nav id="projects" v-show="isProjects">
+                </nav>
+                <nav class="history" id="projects" v-show="isProjects">
                     <div id="tutor">
                         <span class="languages">Python, JS, Vue, Vuex, HTML, CSS</span>
                         <h1>Tutor</h1><p>A work in progress collection of information for me to use as notes for myself and my friends, expanded to be a public resource.</p>
@@ -60,7 +64,7 @@
                         <a href="https://gist.github.com/alt1f923/991aa31b907e0d6f8c24c52ba61210ac">Check it out</a>
                     </div>
                 </nav>
-                <nav id="activity" v-show="isActivity">
+                <nav class="history" id="activity" v-show="isActivity">
                     <activity></activity>
                 </nav>
             </main>

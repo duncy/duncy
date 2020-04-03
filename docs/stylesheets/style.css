@@ -59,18 +59,26 @@ main {
   background: rgb(70, 65, 75);
 }
 
-main > h1 {
+.history-nav {
+  font-size: 2rem;
   margin-left: calc(5vw + 1rem);
   margin-top: 2rem;
   word-spacing: 3rem;
   text-shadow: 0.1rem 0.1rem black;
 }
 
-main > h1 > span:not(.active):hover {
+header .history-nav {
+  right: 1rem;
+  top: 0rem;
+  position: absolute;
+  margin: 0;
+}
+
+.history-nav > span:not(.active):hover, header .history-nav > span:hover {
     cursor: pointer;
 }
 
-main > h1 > span.active,  main > h1 > span:hover{
+main .history-nav > span.active,  .history-nav > span:hover{
     text-decoration: underline;
 }
 
@@ -81,7 +89,7 @@ footer {
   width: 100%;
 }
 
-nav {
+.history {
   margin-left: calc(5vw + 1rem);
   margin-right: calc(5vw + 1rem);
   margin-top: 2rem;
@@ -94,15 +102,15 @@ nav {
   overflow-y: scroll;
 }
 
-nav > div {
+.history > div {
   padding: 2rem;
 }
 
-nav > ul > li > div {
+.history > ul > li > div {
   padding: 1.5rem 2rem 1.5rem 2rem;
 }
 
-nav div{
+.history div{
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
@@ -110,29 +118,29 @@ nav div{
 }
 
 /* Style for section hyperlinked text */
-nav a {
+.history a {
   text-decoration: none;
   color: rgb(215, 90, 40);
 }
 
-nav a:hover {
+.history a:hover {
   color: rgb(250, 180, 150);
   cursor: pointer;
 }
 
-nav a::selection {
+.history a::selection {
   color: rgb(200, 220, 255);
 }
-nav h1 {
+.history h1 {
   line-height: 2rem;
   font-size: 1.2rem;
 }
 
-nav > p {
+.history > p {
   line-height: 1.2rem;
 }
 
-nav div > a {
+.history div > a {
   position: absolute;
   right: 1rem;
   bottom: 0.5rem;
@@ -146,7 +154,7 @@ nav div > a {
   top: 0.5rem;
 }
 
-nav div *::selection {
+.history div *::selection {
   background-color: rgb(50, 50, 50);
   color: white;
 }
