@@ -31,7 +31,7 @@
             </header>
             
             <main>
-                <div class="code-bar"><div class="code-bar-item" id="python">Python 3</div><div class="code-bar-item" id="javascript">JS (Vue/Vuex)</div><div class="code-bar-item" id="r">R</div><div class="code-bar-item" id="sql">SQL</div><div class="code-bar-item" id="rust">Rust</div><div class="code-bar-item" id="c">C</div><div class="code-bar-item" id="php">PHP</div></div>
+                <div class="code-bar"><div class="code-bar-item" id="python">Python<span class="more-info">Python 3, Discord.py and Matplotlib</span></div><div class="code-bar-item" id="javascript">JS<span class="more-info">Vue and Vuex</span></div><div class="code-bar-item" id="r">R<span class="more-info">R v3+</span></div><div class="code-bar-item" id="sql">SQL<span class="more-info">Oracle SQL and MySQL</span></div><div class="code-bar-item" id="rust">Rust<span class="more-info">File editing and Serenity-rs</span></div><div class="code-bar-item" id="c">C<span class="more-info">Malloc and low level I/O with a ATmega32U2 microcontroller board</span></div><div class="code-bar-item" id="php">PHP<span class="more-info">PHP 😂</span></div></div>
                 <nav class="history-nav">
                     <span @click="updateID(0)" :class="{ active: isProjects }">Projects</span>
                     <span @click="updateID(1)" :class="{ active: isActivity }">Activity</span>
@@ -44,8 +44,8 @@
                         <a href="https://tutor.duncy.nz/">Check it out</a>
                     </div>
                     <div id="flightless">
-                        <span class="languages">Python</span>
-                        <h1>Flightless</h1><p>A pretty bog-standard Discord bot made for my server, work in progress and written in Python.</p>
+                        <span class="languages">Rust</span>
+                        <h1>Flightless</h1><p>Previously Python discord bot being written in a new Rust Discord library (Twilight-rs).</p>
                         <p>Website is WIP.</p>
                         <a href="https://flightless.duncy.nz/">Check it out</a>
                     </div>
@@ -60,7 +60,7 @@
                     <div id="asm-fizzbuzz">
                         <span class="languages">Assembly (MASM64)</span>
                         <h1>FizzBuzz in MASM64</h1>
-                        <p>Out of curiousity I decided to jump into Assembly programming by writing FizzBuzz.</p><p>Assembly is certainly something different from what I'm used to.</p>
+                        <p>FizzBuzz written in Microsoft Assembly (MASM64) for fun.</p><p>Hardcoded to only run to 15 (The first instance of "FizzBuzz").</p>
                         <a href="https://gist.github.com/alt1f923/991aa31b907e0d6f8c24c52ba61210ac">Check it out</a>
                     </div>
                 </nav>
