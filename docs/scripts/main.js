@@ -69,7 +69,7 @@ var main = new Vue({
             store.commit('updateID', id)
         },
         getEvents() {
-            axios.get('https://api.github.com/users/weasel-dev/events').then((response) => {
+            axios.get('https://api.github.com/users/duncy/events').then((response) => {
                 response.data.forEach(function(event) {
                     if(event.type === "PushEvent") {
                         let time = millisecondsToTimeString(Date.now() - Date.parse(event.created_at))

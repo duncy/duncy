@@ -1,0 +1,336 @@
+$headerImportant: rgb(220, 220, 100);
+
+#app {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    position: relative;
+
+}
+
+.history-nav {
+    font-size: 2rem;
+    word-spacing: 3rem;
+    margin-left: 0;
+    margin-top: 2rem;
+    text-shadow: 0.1rem 0.1rem black;
+    width: 100vw;
+    text-align: center;
+}
+
+header .history-nav {
+    margin-top: 0;
+}
+
+main .history-nav > span.active,.history-nav > span:hover{
+    text-decoration: underline;
+}
+
+.history-nav > span:not(.active):hover, header .history-nav > span:hover {
+    cursor: pointer;
+}
+
+header {
+    grid-area: header;
+    background: rgb(150, 65, 65);
+    height: 100vh;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 4.5rem;
+}
+
+header h1 {
+    margin-top: calc(40vh - 11.5rem);
+    text-shadow: 0.5rem 0.25rem black;
+    color: $headerImportant;
+}
+
+header h2 {
+    font-size: 2rem;
+    line-height: 1rem;
+}
+
+header h3 {
+    margin-top: 10vh;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+header h2, header h3, header h4 {
+    text-shadow: 0.15rem 0.15rem black;
+}
+
+header .important {
+    color: $headerImportant;
+}
+
+header .line {
+    height: 0.5rem;
+    width: 20rem;
+    display: inline-block;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0.25rem 0.25rem black;
+}
+
+main {
+    grid-area: main;
+    min-height: 100vh;
+    height: fit-content;
+    background: rgb(70, 65, 75);
+}
+
+.history {
+    margin-left: calc(5vw + 1rem);
+    margin-right: calc(5vw + 1rem);
+    margin-top: 2rem;
+    margin-bottom: 7rem;
+    box-shadow: 0.25rem 0.25rem black;
+    background-color: rgb(240, 240, 240);
+    color: black;
+    white-space: pre-line;
+    max-height: 72vh;
+    overflow-y: scroll;
+}
+
+.history > div {
+    padding: 2rem;
+}
+
+.history > ul > li > div {
+    padding: 1.5rem 2rem 1.5rem 2rem;
+}
+
+.history div{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: fit-content;
+}
+
+/* Style for section hyperlinked text */
+.history a {
+    text-decoration: none;
+    color: rgb(215, 90, 40);
+}
+
+.history a:hover {
+    color: rgb(250, 180, 150);
+    cursor: pointer;
+}
+
+.history a::selection {
+    color: rgb(200, 220, 255);
+}
+  
+.history h1 {
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+  
+.history > p {
+    line-height: 1.2rem;
+}
+  
+.history div > a {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    display: inline;
+}
+  
+.languages, .time-since {
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+}
+  
+.history div *::selection {
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+  
+.code-bar {
+    font-weight: 500;
+    box-shadow: 0.25rem 0.25rem black;
+    margin: auto;
+    margin-top: 2rem;
+    display: block;
+    min-height: fit-content;
+    height: 2rem;
+    width: 90vw;
+    position: relative;
+}
+  
+.code-bar-item {
+    font-size: 1.25rem;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    line-height: 2rem;
+    vertical-align: middle;
+}
+  
+.code-bar-item:hover {
+    filter: brightness(1.1);
+}
+  
+.more-info {
+    display: none;
+    background: black;
+    position: absolute;
+    width: 100%;
+}
+  
+.code-bar-item:hover .more-info {
+    display: block;
+}
+  
+#python {
+    width: 27%;
+    background-color: rgb(85, 85, 150);
+}
+  
+#javascript {
+    width: 13%;
+    background-color: rgb(75, 150, 115);
+}
+  
+#r {
+    width: 7%;
+    background-color: rgb(85, 100, 160);
+}
+  
+#sql {
+    width: 14%;
+    background-color: rgb(120, 80, 120);
+}
+  
+#rust {
+    width: 17%;
+    background-color: rgb(120, 80, 80);
+}
+  
+#c {
+    width: 10%;
+    background-color: rgb(115, 145, 170);
+}
+  
+#php {
+    width: 12%;
+    background-color: rgb(75, 75, 125);
+}
+  
+#tutor {
+    border-left: 0.5rem solid #506491;
+}
+  
+#flightless {
+    border-left: 0.5rem solid rgb(126, 96, 73);
+}
+  
+#pukeko {
+    border-left: 0.5rem solid rgb(46, 80, 136);
+}
+  
+#asm-fizzbuzz {
+    border-left: 0.5rem solid #000;
+}
+  
+  /* header fade in on load transition */
+.fade-enter-active,
+.fade-leave-active,
+.fade2-enter-active,
+.fade2-leave-active {
+    transition: opacity 0.5s ease-out, transform 0.5s ease;
+}
+  
+.fade-enter,
+.fade-leave-to,
+.fade2-enter,
+.fade2-leave-to {
+    opacity: 0;
+    transform: translateY(-1rem);
+}
+  
+.fade-enter-active {
+    transition-delay: 0.5s;
+}
+  
+.fade2-enter-active {
+    transition-delay: 1s;
+}
+  
+.fade-leave,
+.fade-enter-to,
+.fade2-leave,
+.fade2-enter-to {
+    opacity: 1;
+}
+  
+  main nav {
+    scrollbar-width: 0.5rem;
+}
+  
+  main nav::-webkit-scrollbar {
+    display: initial;
+    width: 0.5rem;
+}
+  
+  main nav::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+  
+  main nav::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+  main nav::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+  
+  @media screen and (min-width: 1100px){ 
+    header > div:first-of-type, header noscript > div:first-of-type {
+      width: 30vw;
+      float: left;
+  }
+  
+    header > div:nth-of-type(2), header noscript > div:nth-of-type(2){
+      width: 65vw;
+      float: right;
+  }
+  
+    header h1{
+      margin-top: calc(50vh - 7rem);
+  }
+  
+    header h3 {
+      margin-top: 50vh;
+      margin-left: 0;
+      margin-right: 5vw;
+      text-align: left;
+  }
+  
+    header .history-nav {
+      right: 1.5rem;
+      top: 0rem;
+      position: absolute;
+  }
+  
+  .history-nav {
+      margin-left: calc(5vw + 1rem);
+      width: initial;
+      text-align: left;
+  }
+}
+  
+footer {
+    height: 4rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
