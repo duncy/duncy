@@ -1,0 +1,85 @@
+[bar/example]
+monitor = ${env:MONITOR:}
+modules-left = dwm
+modules-center = date
+modules-right = gpu cpu memory
+override-redirect = false
+font-0 = monofur:size=12
+font-1 = monofur Nerd Font:size=8
+offset-y = 18
+offset-x = 18
+width = ${env:WIDTH:}
+height = 42
+fixed-center = true
+padding = 2
+tray-position = right
+module-margin = 1
+background = #111111
+
+
+[module/dwm]
+type = internal/dwm
+format = <label-tags>
+; Path to dwm socket (default: /tmp/dwm.sock)
+; socket-path = /tmp/dwm.sock
+
+; Left-click to view tag, right-click to toggle tag view
+enable-tags-click = true
+; Scroll to cycle between available tags
+enable-tags-scroll = true
+; If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
+tags-scroll-empty = false
+; If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
+tags-scroll-reverse = false
+; If true and enable-tags-scroll = true, wrap active tag when scrolling
+tags-scroll-wrap = false
+; Left-click to set secondary layout, right-click to switch to previous layout
+enable-layout-click = false
+; Scroll to cycle between available layouts
+enable-layout-scroll = false
+; Wrap when scrolling and reaching beginning/end of layouts
+layout-scroll-wrap = false
+; Reverse scroll direction
+layout-scroll-reverse = false
+
+
+; focused = Selected tag on focused monitor
+label-focused = ﱣ
+label-focused-padding = 1
+
+; unfocused = Unselected tag on unselected monitor
+label-unfocused = ${self.label-focused}
+label-unfocused-padding = ${self.label-focused-padding}
+
+; visible = Unselected tag, but occupied tag on any monitor
+label-visible = 綠
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Unselected tag with window that has urgency hint set
+label-urgent = 
+label-urgent-padding = ${self.label-focused-padding}
+
+; empty = Unselected and unoccupied tag
+; This can be set to an empty string to hide empty tags
+label-empty = 祿
+label-empty-padding = ${self.label-focused-padding}
+
+[module/date]
+type = internal/date
+date = "%A, %y/%m/%d, %H:%M "
+
+[module/memory]
+type = internal/memory
+interval = 30
+label = RAM: %percentage_used%%
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+label = CPU: %percentage%%
+
+[module/gpu]
+type = custom/script
+exec = cat /sys/class/drm/card0/device/hwmon/hwmon*/temp1_input | awk '{ printf "%.0f°C", $1/1000 }'
+interval = 30
+label = GPU: %output%
