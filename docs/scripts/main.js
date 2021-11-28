@@ -29,15 +29,33 @@ function millisecondsToTimeString(msecs) {
 
 const store = new Vuex.Store({
     state: {
-        currentID: 0,
-        githubEvents: []
+        pageStateID: 0,
+        codebarCurrentID: 0,
+        githubEvents: [],
+        codebarList: [
+            {id: 0, content: "I am very proficient in Python, as I have been programming in it since High School, from the start it has been one of my languages of choice for building fun hobby projects and University assignments. I am familiar with using it for webscraping, interacting with APIs, presenting data and using multithreading/asyncronous programming to boost performance."
+            },
+            {id: 1, content: "I have been using JavaScript since 2017, I am familiar with using deno and node, and have experience using Vue and Vuex. "},
+            {id: 2, content: "I have experience using R from my University studies learning Data Science and statistics, as a result I am able to interact with APIs and files such as .csv to generate data tables that can be presented to show trends in said data."},
+            {id: 3, content: "I am experienced with using SQL in a multitude of projects, from High School, to personal projects and to University assignments. I am familiar with the Enhanced Entity Relation model, relational algebra and SQL joins. I have used PostgreSQL, MySQL and Oracle SQL."},
+            {id: 4, content: "Rust is a language that I enjoy using very much. I have been using it since 2019 for a variety of small projects. I am familiar with using one of it's asyncronous libraries and am familiar with using it's core features."},
+            {id: 5, content: "I am experienced with C in use for microcontrollers, such as the ATmega32 microcontroller, for which I collaboratively wrote a program for as part of a University assignment. I have an understanding of how to use malloc."},
+            {id: 6, content: "I have used PHP. Not really much more to say about it."}]
     },
     mutations: {
-        updateID(state, payload) {
-            state.currentID = payload
+        updatePageStateID(state, payload) {
+            state.pageStateID = payload
+        },
+        setCodebarID(state, payload) {
+            state.codebarCurrentID = payload
         },
         addGithubEvent(state, event) {
             state.githubEvents.push(event)
+        }
+    },
+    getters: {
+        getCodebarContent: state => {
+            return store.state.codebarList[store.state.codebarCurrentID].content
         }
     }
 })
@@ -48,6 +66,15 @@ Vue.component('header-text', {
 
 Vue.component('subheader-text', {
     template: '<transition name="fade2" appear><div><h3>University student and hobbyist programmmer with experience in <span class="important">multiple programmming languages</span>, <span class="important">database systems (planning and implementation)</span> and <span class="important">linux</span> with an interest to learn more.</h3></div></transition>'
+})
+
+Vue.component('code-bar-info', {
+    template: '<div id="code-bar-info"><p>{{ getContent }}</p></div>',
+    computed: {
+        getContent() {
+            return store.getters.getCodebarContent
+        }
+    }
 })
 
 Vue.component('activity', {
@@ -65,8 +92,11 @@ var main = new Vue({
         this.getEvents()
     },
     methods: {
-        updateID(id) {
-            store.commit('updateID', id)
+        updatePageStateID(id) {
+            store.commit('updatePageStateID', id)
+        },
+        setCodebarID(id) {
+            store.commit('setCodebarID', id)
         },
         getEvents() {
             axios.get('https://api.github.com/users/duncy/events').then((response) => {
@@ -107,10 +137,10 @@ var main = new Vue({
     },
     computed: {
         isProjects() {
-            return store.state.currentID === 0
+            return store.state.pageStateID === 0
         },
         isActivity() {
-            return store.state.currentID === 1
+            return store.state.pageStateID === 1
         }
     }
 })

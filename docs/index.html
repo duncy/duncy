@@ -4,6 +4,7 @@
         <meta charset = "UTF-8">
         <meta name="author" content="Duncan Fryer">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="University student and hobbyist programmer with experience in multiple programming languages, database systems (planning and implementation) and linux with an interest to learn more.">
         <link rel="icon" href="images/flightless.png" type="image/png" sizes="32x29">
         <link rel="stylesheet" href="stylesheets/universal-style.css">
         <link rel="stylesheet" href="stylesheets/style.css">
@@ -13,8 +14,8 @@
         <div id="app">
             <header>
                 <nav class="history-nav">
-                    <span @click="updateID(0);scroll(0, window.innerHeight)" :class="{ active: isProjects }">Projects</span>
-                    <span @click="updateID(1);scroll(0, window.innerHeight)" :class="{ active: isActivity }">Activity</span>
+                    <span @click="updatePageStateID(0);scroll(0, window.innerHeight)" :class="{ active: isProjects }">Projects</span>
+                    <span @click="updatePageStateID(1);scroll(0, window.innerHeight)" :class="{ active: isActivity }">Activity</span>
                 </nav>
                 <noscript>
                     <div>
@@ -31,10 +32,13 @@
             </header>
             
             <main>
-                <div class="code-bar"><div class="code-bar-item" id="python">Python<span class="more-info">Matplotlib, BeautifulSoup4, Async and Multithreading.</span></div><div class="code-bar-item" id="javascript">JS<span class="more-info">Vue and Vuex</span></div><div class="code-bar-item" id="r">R<span class="more-info">R v3+</span></div><div class="code-bar-item" id="sql">SQL<span class="more-info">Oracle SQL and MySQL</span></div><div class="code-bar-item" id="rust">Rust<span class="more-info">File editing and Serenity-rs</span></div><div class="code-bar-item" id="c">C<span class="more-info">Malloc and low level I/O with a ATmega32U2 microcontroller board</span></div><div class="code-bar-item" id="php">PHP<span class="more-info">PHP 😂</span></div></div>
+                <div class="code-bar">
+                    <div class="code-bar-item" id="python" @click="setCodebarID(0)" >Python</div><div class="code-bar-item" id="javascript" @click="setCodebarID(1)">JavaScript</div><div class="code-bar-item" id="r" @click="setCodebarID(2)">R</div><div class="code-bar-item" id="sql" @click="setCodebarID(3)">SQL</div><div class="code-bar-item" id="rust" @click="setCodebarID(4)">Rust</div><div class="code-bar-item" id="c" @click="setCodebarID(5)">C</div><div class="code-bar-item" id="php" @click="setCodebarID(6)">PHP</div>
+                <code-bar-info></code-bar-info>
+                </div>
                 <nav class="history-nav">
-                    <span @click="updateID(0)" :class="{ active: isProjects }">Projects</span>
-                    <span @click="updateID(1)" :class="{ active: isActivity }">Activity</span>
+                    <span @click="updatePageStateID(0)" :class="{ active: isProjects }">Projects</span>
+                    <span @click="updatePageStateID(1)" :class="{ active: isActivity }">Activity</span>
                 </nav>
                 <nav class="history" id="projects" v-show="isProjects">
                     <div id="flightless">
@@ -63,7 +67,7 @@
                 </nav>
             </main>
             <footer>
-                <p>Website built using axios, vue and vuex.<br>Duncan Fryer © 2019 - 2020</p>
+              <p>Website built using axios, vue and vuex.<br>Duncan Fryer © 2019 - {{new Date().getFullYear()}}</p>
                 <ul>
                     <li><a href="https://github.com/duncy">GitHub</a></li>
                 </ul>
