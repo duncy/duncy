@@ -40,7 +40,8 @@ const store = new Vuex.Store({
             {id: 3, content: "I am experienced with using SQL in a multitude of projects, from High School, to personal projects and to University assignments. I am familiar with the Enhanced Entity Relation model, relational algebra and SQL joins. I have used PostgreSQL, MySQL and Oracle SQL."},
             {id: 4, content: "Rust is a language that I enjoy using very much. I have been using it since 2019 for a variety of small projects. I am familiar with using one of it's asyncronous libraries and am familiar with using it's core features."},
             {id: 5, content: "I am experienced with C in use for microcontrollers, such as the ATmega32 microcontroller, for which I collaboratively wrote a program for as part of a University assignment. I have an understanding of how to use malloc."},
-            {id: 6, content: "I have used PHP. Not really much more to say about it."}]
+            {id: 6, content: "I am relatively new to C++ as I am currently using it to do basic 3D rendering of GLUT objects using OpenGL."},
+            {id: 7, content: "I have used PHP. Not really much more to say about it."}]
     },
     mutations: {
         updatePageStateID(state, payload) {
@@ -78,7 +79,7 @@ Vue.component('code-bar-info', {
 })
 
 Vue.component('activity', {
-    template: '<ul><li v-for="event in events"><div><span class="time-since">{{ event.date }}</span><h1><img :src="event.icon"> {{ event.title }}</h1><p>{{ event.comments }}</p><a :href="event.url">{{ event.name }}</a></div></li></ul>',
+    template: '<ul><li v-if="!events.length"><div>Looks as though there hasn\'t been any activity in a while... must be exam season. 😅</div></li><li v-for="event in events"><div><span class="time-since">{{ event.date }}</span><h1><img :src="event.icon"> {{ event.title }}</h1><p>{{ event.comments }}</p><a :href="event.url">{{ event.name }}</a></div></li></ul>',
     computed: {
         events() {
             return store.state.githubEvents
